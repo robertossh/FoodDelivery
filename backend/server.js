@@ -5,6 +5,7 @@ import foodRouter from "./routes/foodRoute.js"
 import 'dotenv/config'
 import { errorHandler, notFound } from "./middleware/errorHandler.js"
 import userRouter from "./routes/userRoute.js"
+import cartRouter from "./routes/cartRoute.js"
 
 // app config
 const app = express()
@@ -22,6 +23,7 @@ connectDb();
 app.use("/api/food", foodRouter)
 app.use("/images", express.static('uploads'))
 app.use("/api/user",userRouter)
+app.yse("/api/cart",cartRouter)
 
 app.get("/", (req, res) => {
     res.json({
